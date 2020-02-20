@@ -1,20 +1,33 @@
 .home {
+  .fun{
+    display: inline-block;
+    animation: animate 1.5s linear infinite;
+  }
+
+  @keyframes animate{.color-rotate(gold, orange, 45deg)};
+
+  header {
+    .flex(column, space-between,"","");
+    .size(40em,"","","");
+    border-bottom: @border-size @border-type @navigation-border;
+
+    .about {
+      .flex(column, space-evenly,"","");
+      .size(35%,"","","");
+    }
+  }
 
   .content-section {
     margin: 30px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-   
+    .flex(row-wrap, space-between, "","");
     
     .text-content {
-      width: 48%;
+      .size(48%, 48%,"","");
       padding-right: 1%;
     }
 
     .img-content {
-      width: 48%;
+      .size(48%, 48%,"","");
       padding-left: 1%;
 
       img {
@@ -25,7 +38,7 @@
 
   .inverse-content {
     padding-bottom: 30px;
-    border-bottom: 2px dashed @navigation-border;
+    border-bottom: @border-size @border-type @navigation-border;
 
     .text-content {
       padding-left: 1%;
@@ -39,7 +52,7 @@
   }
 
   .content-destination {
-    width: 75%;
+    .size(75%, 75%,"","");
     margin: 0 auto 30px;
 
     img {
@@ -49,13 +62,62 @@
 
   .content-pick {
     padding-top: 30px;
-    border-top: 2px dashed @navigation-border;
-    display: flex;
-    justify-content: space-between;
+    border-top: @border-size @border-type @navigation-border;
+    .flex("", space-between, "", "");
 
     .destination {
-      width: 30%;
+      .size(30%, 30%,"","");
       margin-bottom: 30px;
+    }
+
+    .btn {
+      .button(1em);
+      .size("", 80%, "", "");
+    }
+  }
+
+  @media @mobile{
+    padding: 0 5%;
+
+    header {
+      .size(40em, "","","");
+
+      .about {
+        .size(70%,"","","");
+      }
+    }
+
+    .content-section {
+      .flex(column, space-between, "",center);
+
+      .text-content {
+        .size("",100%,"","");
+      }
+
+      .img-content{
+        .size(auto,100%,"","");
+      }
+    }
+
+    .inverse-content {
+      .flex(column-reverse, "","","");
+    }
+
+    .content-destination {
+      .size("", 100%, "","");
+    }
+
+    .content-pick {
+      .flex(column, "","","");
+      padding: 30px 10% 0 10%;
+
+      .destination {
+        .size("",100%,"","");
+      }
+
+      .btn{
+        .size("",100%,"","");
+      }
     }
   }
 }// home

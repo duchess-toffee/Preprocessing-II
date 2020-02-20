@@ -1,1 +1,48 @@
 // Mixins in here
+.flex(@flow, @justify, @align, @items){
+    display: flex;
+    flex-flow: @flow;
+    justify-content: @justify;
+    align-content: @align;
+    align-items: @items;
+}
+  
+.size(@height, @width, @min-height, @max-height){
+    height: @height;
+    width: @width;
+    min-height: @min-height;
+    max-width: @max-height;
+}
+
+.button(@padding){
+    padding: @padding;
+    color: @white;
+    background: @button-bg;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: center;
+    font-size: 1.4em;
+
+    &:hover{
+        font-weight: bold;
+        border: 1px solid @button-bg;
+    }
+}
+
+.color-rotate(@half-color, @main-color, @deg) {
+    0%{
+      color: black;
+    }
+    25%{
+      color: @half-color;
+      transform: rotate(@deg);
+    }
+    50%{
+      color: @main-color;
+      transform: rotate(0deg);
+    }
+    75%{
+      color: @half-color;
+      transform:rotate(-@deg);
+    }
+ }

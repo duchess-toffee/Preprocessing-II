@@ -1,1 +1,50 @@
 // Navigation Styles here
+nav{
+    .fun{
+      display: inline-block;
+      animation: animate 1.5s linear infinite;
+    }
+    
+    @keyframes animate{.color-rotate(gold, orange, 45deg)};
+
+    .size(10em, 100%, auto, auto);
+    border-bottom: @border-size @border-type @navigation-border;
+
+    .nav{
+        .flex(row, space-between, center, center);
+        .size(100%, 100%, auto, auto);
+        
+        .logo{
+            font-size: 4em;
+        }
+
+        .nav-links{
+            .flex(row, space-evenly, center, center);
+            .size(100%, 50%, 5em, auto);
+
+            a{
+                font-size: 1.5em;
+                text-decoration: none;
+                color: @shark;
+
+                &:hover{
+                    font-weight: bold;
+                    border-bottom: 2px solid black;
+                    padding-top: 3px;
+                }
+            }
+        }
+
+        @media @mobile {
+            .flex(column, space-evenly, "", "");
+            
+            .logo{
+                margin-top: .5em;
+            }
+
+            .nav-links{
+                .size(30%, 90%,"","");
+            }
+        }
+    }
+}
